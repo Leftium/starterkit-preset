@@ -1,6 +1,8 @@
 **Usage:**
 
-    npx apply leftium/starterkit-preset
+    npm init svelte@next                 # Get stock template.
+    git init                             # Initialize git repo.
+    npx apply leftium/starterkit-preset  # Apply presets.
 
 Runs several presets at once:
 - [Leftium/gitattributes-preset](https://github.com/Leftium/gitattributes-preset)

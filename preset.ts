@@ -1,16 +1,12 @@
 import { Preset } from 'apply';
 
-Preset.setName('vscode-preset');
-Preset.extract('.vscode/launch.json').withDots().whenConflict('ask');
-Preset.extract('.gitignore').withDots().whenConflict('skip');
+Preset.setName('starterkit-preset');
 
-Preset.edit('.gitignore').update((content, preset) => {
-    let result = content;
+Preset.apply('Leftium/gitattributes-preset');
+Preset.apply('Leftium/vscode-preset');
+Preset.apply('Leftium/coffeescript-adder');
+Preset.apply('Leftium/pug-adder');
+Preset.apply('Leftium/netlify-adapter-adder');
 
-    if (!result.includes('.vscode')) {
-        result += `\n.vscode`;
-    }
-
-    return result;
-});
+Preset.instruct(`Run ${color.magenta("npm install")}, ${color.magenta("pnpm install")}, or ${color.magenta("yarn")} to install dependencies`);
 
